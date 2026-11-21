@@ -4,27 +4,28 @@
 #
 # D1 · Cỡ mẫu (baseline 0,70; mục tiêu +5 điểm; alpha 0,05; power 0,8; ICC 0,02)
 #   a) Chia theo yêu cầu:
-#   b) Theo nhân viên, m = 75:
-#   c) 20 nhân viên mỗi nhóm:
-#   d) 6 depot mỗi nhóm:
-#   e) Mức chênh 6 điểm (859 mỗi nhóm), 20 nhân viên mỗi nhóm:
+#   a) Chia theo yêu cầu: 1.251 yêu cầu/nhóm (statsmodels: 1.250).
+#   b) Theo nhân viên, m = 75: DE=2,48; 3.103 yêu cầu/nhóm; cần 42 người/nhóm, tổng 84 > 40 nên không đủ.
+#   c) 20 nhân viên mỗi nhóm: giới hạn hiệu dụng theo ICC = 1.000 < 1.251, không đạt mục tiêu 5 điểm.
+#   d) 6 depot mỗi nhóm: giới hạn hiệu dụng theo ICC = 300 < 1.251, không đạt mục tiêu 5 điểm.
+#   e) Mức chênh 6 điểm (859 mỗi nhóm), 20 nhân viên mỗi nhóm: cần m >= 299 yêu cầu/người (DE=6,96).
 #
 # D2 · Năm câu kiểm tra "tách được tác động" với cách chia đã chọn (mỗi câu một dòng):
-#   1. Đối chứng chạy cùng thời gian:
-#   2. Chia ngẫu nhiên hay do người chọn:
-#   3. Ảnh hưởng gián tiếp và cách giảm:
-#   4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước:
-#   5. Ít nhất 20 cụm mỗi nhóm:
+#   1. Đối chứng chạy cùng thời gian: Có, 20 nhân viên đối chứng chạy đồng thời với 20 nhân viên dùng trợ lý.
+#   2. Chia ngẫu nhiên hay do người chọn: Ngẫu nhiên theo staff_id trước ngày bắt đầu, không do người vận hành chọn.
+#   3. Ảnh hưởng gián tiếp và cách giảm: Có thể có spillover; tách nhóm theo nhân viên và cấm chia sẻ kịch bản trong pilot.
+#   4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước: Có; mde 5 điểm, ngày quyết định 2026-12-19.
+#   5. Ít nhất 20 cụm mỗi nhóm: Có, 20 nhân viên là 20 cụm mỗi nhóm.
 #
-# Đánh đổi đã chấp nhận (nếu cách chia chưa đạt cả hai điều kiện):
+# Đánh đổi đã chấp nhận: chấp nhận MDE 6 điểm và 299 yêu cầu/nhân viên; power chỉ 0,64 nếu tác động thật là 5 điểm.
 #
-# Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn:
+# Tỉ lệ mo_lai_trong_7_ngay hiện tại: 4,25% toàn mẫu (51/1.200), 3,97% trong noi_dia + hang_nang (39/982); ngưỡng an toàn chọn 5%.
 
 pilot:
-  owner: "?"                      # một người có tên vai trò, không ghi "cả đội"
-  scope: "?"                      # loại yêu cầu nào, depot nào; dựa vào kết quả A3
+  owner: "Vai trò 4 — Người gắn nhãn 2 kiêm giữ hồ sơ"                      # một người có tên vai trò, không ghi "cả đội"
+  scope: "noi_dia + hang_nang tại 6 depot đã chạy thử; loại quoc_te loại khỏi pilot vì 1,88x mức 12.000 đ, doi_tac không đưa vào phạm vi chính vì 0,85x"                      # loại yêu cầu nào, depot nào; dựa vào kết quả A3
   assignment:
-    unit: "?"                     # request | staff | depot
+    unit: "staff"                     # request | staff | depot
     control_share: 0.5
     randomized: true
   rollout: [0.10, 0.25, 0.50]     # mỗi bước một tuần
@@ -34,18 +35,18 @@ pilot:
     mde: 0.05
     alpha: 0.05
     power: 0.80
-    n_per_arm: "?"
-    design_effect: "?"            # 1 nếu chia theo yêu cầu
-    clusters_per_arm: "?"         # để trống nếu chia theo yêu cầu
+    n_per_arm: 859
+    design_effect: 6.96            # 1 nếu chia theo yêu cầu
+    clusters_per_arm: 20           # để trống nếu chia theo yêu cầu
   identifiability:
-    concurrent_control: "?"
-    spillover_risk: "?"
-    predeclared: "?"
+    concurrent_control: "Có — 20 nhân viên đối chứng chạy cùng thời gian"
+    spillover_risk: "Trung bình — có thể chia sẻ kinh nghiệm; giảm bằng phân nhóm theo staff_id và cấm chia sẻ kịch bản"
+    predeclared: "Có — chỉ số chính, MDE 6 điểm, luật dừng và ngày quyết định viết trước"
   stop_rules:
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
+    - "NẾU mo_lai_trong_7_ngay > 5% TRONG 7 ngày đầu THÌ Vai trò 4 dừng rollout và rollback trong 30 phút KHÔNG THÌ tiếp tục bước rollout đã định"
+    - "NẾU chi phí mỗi việc thành công > 12.000 đ TRONG 2 ngày liên tiếp THÌ Vai trò 2 giảm rollout về 10% và rà soát làm lại/xem lại KHÔNG THÌ giữ bước hiện tại"
+    - "NẾU tỉ lệ dùng trợ lý < 80% số ca đủ điều kiện TRONG 1 tuần THÌ Vai trò 4 dừng mở rộng và phỏng vấn 5 nhân viên trước ngày quyết định KHÔNG THÌ tiếp tục thu thập đủ mẫu"
   interim_looks: "chỉ kiểm tra chỉ số an toàn"
-  rollback: "?"                   # ai bấm, mất bao lâu, khách được phục vụ bằng gì
-  decision_date: "?"
-  simulated_inputs: ["?"]         # liệt kê mọi con số giả lập đã dùng
+  rollback: "Vai trò 4 bấm tắt rollout trong 30 phút; các yêu cầu mới chuyển cho nhân viên xử lý theo quy trình 6 phút/ca."
+  decision_date: "2026-12-19"
+  simulated_inputs: ["baseline 0,70", "MDE 5 điểm và phương án chấp nhận 6 điểm", "alpha 0,05", "power 0,80", "ICC 0,02", "m=75 yêu cầu/nhân viên", "299 yêu cầu/nhân viên", "mo_lai 4,25% toàn mẫu", "mo_lai 3,97% noi_dia + hang_nang", "ngưỡng an toàn 5%", "chi phí nhân viên 12.000 đ/ca"]         # liệt kê mọi con số giả lập đã dùng
