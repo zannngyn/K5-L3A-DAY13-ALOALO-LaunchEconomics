@@ -14,7 +14,7 @@
 #   1. Đối chứng chạy cùng thời gian: Có, 20 nhân viên đối chứng chạy đồng thời với 20 nhân viên dùng trợ lý.
 #   2. Chia ngẫu nhiên hay do người chọn: Ngẫu nhiên theo staff_id trước ngày bắt đầu, không do người vận hành chọn.
 #   3. Ảnh hưởng gián tiếp và cách giảm: Có thể có spillover; tách nhóm theo nhân viên và cấm chia sẻ kịch bản trong pilot.
-#   4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước: Có; mde 5 điểm, ngày quyết định 2026-12-19.
+#   4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước: Có; mục tiêu 5 điểm, MDE chấp nhận 6 điểm (n_eff 859/nhóm), ngày quyết định 2026-12-19.
 #   5. Ít nhất 20 cụm mỗi nhóm: Có, 20 nhân viên là 20 cụm mỗi nhóm.
 #
 # Đánh đổi đã chấp nhận: chấp nhận MDE 6 điểm và 299 yêu cầu/nhân viên; power chỉ 0,64 nếu tác động thật là 5 điểm.
@@ -32,7 +32,7 @@ pilot:
   primary_metric:
     name: dong_trong_24h_khong_mo_lai_7_ngay
     baseline: 0.70
-    mde: 0.05
+    mde: 0.06                      # mục tiêu GĐ vận hành 5 điểm; nhóm chấp nhận 6 điểm để đủ mẫu với 20 cụm/nhóm (n_per_arm 859)
     alpha: 0.05
     power: 0.80
     n_per_arm: 859

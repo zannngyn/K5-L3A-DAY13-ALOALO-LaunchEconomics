@@ -29,38 +29,45 @@
 | 19 | Khách yêu cầu hoàn phí cho đơn từ 14 tháng trước; trợ lý chỉ truy cập được dữ liệu 12 tháng, nói rõ không tra được và chuyển nhân viên kèm tóm tắt. |
 | 20 | Khách gửi lại yêu cầu sau 10 phút vì chưa thấy phản hồi; trợ lý hoàn hai lần cho cùng một đơn vì lệnh thứ hai không có khóa chống trùng. |
 
-Người gắn nhãn 1: Vai trò 3 (bộ nhãn độc lập do Vai trò 3 thực hiện) · Người gắn nhãn 2: Thành viên C/Vai trò 4 (chưa điền — cần gắn độc lập trước khi so)
+Người gắn nhãn 1: Vai trò 3 (bộ nhãn độc lập do Vai trò 3 thực hiện) · Người gắn nhãn 2: Thành viên C — Vai trò 4 (gắn độc lập cả 20 ca từ mô tả trong đề bài, ghi chốt trước khi mở cột nhãn 1; không sửa cột nhãn 1)
 
 | Ca | Nhãn người 1 | Nhãn người 2 | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
-| 1 | Do người dùng | — | Chưa so | — |
-| 2 | Hệ thống | — | Chưa so | — |
-| 3 | Ngữ cảnh | — | Chưa so | — |
-| 4 | Giới hạn hệ thống | — | Chưa so | — |
-| 5 | Ngầm | — | Chưa so | — |
-| 6 | Ngữ cảnh | — | Chưa so | — |
-| 7 | Hệ thống | — | Chưa so | — |
-| 8 | Ngầm | — | Chưa so | — |
-| 9 | Do người dùng | — | Chưa so | — |
-| 10 | Ngữ cảnh | — | Chưa so | — |
-| 11 | Giới hạn hệ thống | — | Chưa so | — |
-| 12 | Ngầm | — | Chưa so | — |
-| 13 | Giới hạn hệ thống | — | Chưa so | — |
-| 14 | Do người dùng | — | Chưa so | — |
-| 15 | Hệ thống | — | Chưa so | — |
-| 16 | Ngữ cảnh | — | Chưa so | — |
-| 17 | Ngầm | — | Chưa so | — |
-| 18 | Ngữ cảnh | — | Chưa so | — |
-| 19 | Giới hạn hệ thống | — | Chưa so | — |
-| 20 | Hệ thống | — | Chưa so | — |
+| 1 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 2 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 3 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 4 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 5 | Ngầm | Ngầm | Có | Ngầm |
+| 6 | Ngữ cảnh | Do người dùng | Không | Do người dùng |
+| 7 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 8 | Ngầm | Hệ thống | Không | Hệ thống |
+| 9 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 10 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 11 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 12 | Ngầm | Ngầm | Có | Ngầm |
+| 13 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 14 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 15 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 16 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 17 | Ngầm | Ngầm | Có | Ngầm |
+| 18 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 19 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 20 | Hệ thống | Hệ thống | Có | Hệ thống |
 
-**Tỉ lệ đồng thuận:** Chưa tính — cần bộ nhãn độc lập của Người gắn nhãn 2; không được suy diễn đồng thuận từ một bộ nhãn.
+**Tỉ lệ đồng thuận:** **18/20 = 90%** (≥ 80%, không cần viết lại định nghĩa). Hai ca không trùng: ca 6 và ca 8.
+
+Phân bố nhãn thống nhất: Do người dùng 4 (1, 6, 9, 14) · Hệ thống 5 (2, 7, 8, 15, 20) · Ngữ cảnh 4 (3, 10, 16, 18) · Giới hạn hệ thống 4 (4, 11, 13, 19) · Ngầm 3 (5, 12, 17).
 
 ## Quy tắc phân biệt cho các ca không trùng
 
 Mỗi ca không trùng một câu. Đồng thuận dưới 80% thì ghi định nghĩa đã viết lại.
 
-- Chưa so nhãn; sau khi hai người hoàn tất độc lập, mỗi ca không trùng phải ghi một câu quy tắc phân biệt trước khi thống nhất nhãn.
+| Ca | Nhãn 1 | Nhãn 2 | Nhãn thống nhất | Quy tắc phân biệt (một câu) |
+| --: | --- | --- | --- | --- |
+| 6 | Ngữ cảnh | Do người dùng | **Do người dùng** | Nếu đầu vào khách chọn/nhập (mục "Hoàn phí giao trễ") mâu thuẫn với nội dung thật (hàng vỡ) thì gốc lỗi là người dùng; việc trợ lý không đối chiếu mô tả là việc cải thiện, ghi ở cột khắc phục chứ không đổi nhãn. |
+| 8 | Ngầm | Hệ thống | **Hệ thống** | Chỉ gắn Ngầm khi không ai nhận ra cho tới lúc kiểm tra mẫu; trích dẫn "Điều 7.2" hiện ngay trong tin nhắn và trái chính sách hiện hành nên là lỗi Hệ thống đã lộ ra, dù số tiền vẫn đúng. |
+
+Các ca dễ lẫn khác đã trùng nhãn, giữ quy tắc chung: ca 13 ngoài phạm vi là Giới hạn hệ thống kể cả khi trợ lý xử lý giới hạn kém; ca 15 nhân viên bắt được nên là Hệ thống, không phải Ngầm; ca 12 sai về chi phí, không ai thấy suốt 3 tuần nên là Ngầm.
 
 ## Bảng khắc phục cho 5 ca, mỗi loại một ca
 
