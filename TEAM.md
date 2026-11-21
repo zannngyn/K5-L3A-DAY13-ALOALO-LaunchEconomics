@@ -9,14 +9,14 @@
 
 ## Thành viên
 
-Tên ghi theo tài khoản git.
+Nhóm 3 thành viên chia 4 vai trò (Nguyễn Thế Văn kiêm Vai trò 1 và Vai trò 2).
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Nguyen The Van |  |  | zannngyn | Vai trò 1 — Người viết code |
-|   2 |  |  |  |  | Vai trò 2 — Người kiểm số |
-|   3 | Nguyen Tien Dat |  |  | dat0310 | Vai trò 3 — Người gắn nhãn 1 |
-|   4 | Tran Van Tai (Thành viên C) |  |  |  | Vai trò 4 — Người gắn nhãn 2 kiêm giữ hồ sơ |
+|   1 | Nguyễn Thế Văn | 2A202603474 | zannngyn@gmail.com | zannngyn | Vai trò 1 — Người viết code |
+|   2 | Nguyễn Thế Văn | 2A202603474 | zannngyn@gmail.com | zannngyn | Vai trò 2 — Người kiểm số |
+|   3 | Nguyễn Tiến Đạt | 2A202603452 | 26ai.datnt23@vinuni.edu.vn | dat73qb | Vai trò 3 — Người gắn nhãn 1 |
+|   4 | Trần Văn Tài | 2A202603506 | 26ai.taitv2@vinuni.edu.vn | iat-123 | Vai trò 4 — Người gắn nhãn 2 kiêm giữ hồ sơ |
 
 Bốn vai của lab:
 
@@ -27,13 +27,17 @@ Bốn vai của lab:
 
 ## Cá nhân
 
-Mỗi thành viên tạo một báo cáo riêng `report/team/MSSV_HoTen.md` (ví dụ `report/team/20241234_NguyenVanAn.md`).
+Mỗi thành viên tạo một báo cáo riêng `report/team/MSSV_HoTen.md`:
 
-## Vai trò 1 — Người viết code (Nguyen The Van)
+- `report/team/2A202603474_NguyenTheVan.md`
+- `report/team/2A202603452_NguyenTienDat.md`
+- `report/team/2A202603506_TranVanTai.md`
+
+## Vai trò 1 — Người viết code (Nguyễn Thế Văn)
 
 ### Phần việc phụ trách
 
-- Nhiệm vụ A, B, D1 trong `src/lab13.py`.
+- Nhiệm vụ A, B, D1 trong `src/lab13.py`; khởi tạo và cấu hình repo nhóm `K5-L3A-DAY13-ALOALO-LaunchEconomics`.
 
 ### Đóng góp cụ thể
 
@@ -43,7 +47,7 @@ Mỗi thành viên tạo một báo cáo riêng `report/team/MSSV_HoTen.md` (ví
 
 - Commit `2a346e4` (`src/lab13.py`, `report/team/bang_chi_phi.md`).
 
-## Vai trò 2 — Người kiểm số
+## Vai trò 2 — Người kiểm số (Nguyễn Thế Văn)
 
 ### Phần việc phụ trách
 
@@ -52,12 +56,13 @@ Mỗi thành viên tạo một báo cáo riêng `report/team/MSSV_HoTen.md` (ví
 ### Đóng góp cụ thể
 
 - Kiểm tay: `890 phút × 2.000 = 1.780.000 đ`; `1.132 phút × 2.000 = 2.264.000 đ`; `5.600 tool × 15 = 84.000 đ`; `4.373.585 / 978 = 4.472 đ` (`simulated`).
+- Điền đủ bảng A1, A2, A3, A4, B1, B2, B3, B4 kèm nhãn `simulated` và câu trả lời ≤ 3 dòng có số.
 
 ### Bằng chứng
 
-- Dòng "Kiểm số thủ công — Vai trò 2" trong `report/team/bang_chi_phi.md`.
+- Commit `2a346e4` (`report/team/bang_chi_phi.md`, mục "Kiểm số thủ công — Vai trò 2").
 
-## Vai trò 3 — Người gắn nhãn 1 (Nguyen Tien Dat)
+## Vai trò 3 — Người gắn nhãn 1 (Nguyễn Tiến Đạt)
 
 ### Phần việc phụ trách
 
@@ -72,7 +77,7 @@ Mỗi thành viên tạo một báo cáo riêng `report/team/MSSV_HoTen.md` (ví
 
 - Commit `34cdf52` (`report/team/bang_loi.md`, `report/team/pilot_plan.yaml`).
 
-## Vai trò 4 — Người gắn nhãn 2 kiêm giữ hồ sơ (Tran Van Tai)
+## Vai trò 4 — Người gắn nhãn 2 kiêm giữ hồ sơ (Trần Văn Tài)
 
 ### Phần việc phụ trách
 
@@ -87,4 +92,4 @@ Mỗi thành viên tạo một báo cáo riêng `report/team/MSSV_HoTen.md` (ví
 
 ### Bằng chứng
 
-- Commit Vai trò 4 trên `main` (`report/team/bang_loi.md`, `chi_so.md`, `ho_so_launch_v0.md`, `group_report.md`, `phieu_cham.md`, `TEAM.md`).
+- Commit `96eb682` (`report/team/bang_loi.md`, `chi_so.md`, `ho_so_launch_v0.md`, `group_report.md`, `phieu_cham.md`, `TEAM.md`).
